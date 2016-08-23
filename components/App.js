@@ -1,11 +1,11 @@
 import React from 'react'
-import Receiver from '../containers/Receiver'
-import PrintText from '../containers/PrintText'
+import UrlReceiver from '../containers/UrlReceiver'
+import TextPrinter from '../containers/TextPrinter'
 
 const App = () => (
   <div>
-    <Receiver />
+    <UrlReceiver />
+    <TextPrinter />
   </div>
 )
-
 export default App

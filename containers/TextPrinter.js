@@ -12,9 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const PrintText = connect(
+const TextPrinter = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ItemList)
 
-export default PrintText
+export default TextPrinter

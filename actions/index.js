@@ -1,7 +1,11 @@
-export const urlReceiver = (url) => {
+let nextItemId = 0
+export const urlReceive = (text) => {
   return {
     type: 'POST',
-    url
+    id: nextItemId++,
+    text
   }
 }
+
+
 

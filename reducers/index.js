@@ -1,14 +1,31 @@
 import { combineReducers } from 'redux'
 
-const html = (state, action) => {
+const todo = (state, action) => {
   switch (action.type) {
     case 'POST':
-       return {
-         url: action.url,
-         //html: action.html
-       }
+      return {
+        id: action.id,
+        url: action.text,
+      }
     default:
       return state
   }
 }
-export default html
+
+const todos = (state = [], action) => {
+  switch (action.type) {
+    case 'POST':
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
+      
+    default:
+      return state
+  }
+}
+
+const itemApp = combineReducers({
+  todos
+})
+export default itemApp
