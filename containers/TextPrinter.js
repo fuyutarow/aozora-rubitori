@@ -1,10 +1,9 @@
 import { connect } from 'react-redux'
-import ItemList from '../components/ItemList'
+import Item from '../components/Item'
 
 const mapStateToProps = (state) => {
-  return {
-    urls: state.todos
-  }
+  console.log(state.item)
+  return state.item
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -13,8 +12,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const TextPrinter = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ItemList)
+  mapStateToProps//,
+  //mapDispatchToProps
+)(Item)
 
 export default TextPrinter

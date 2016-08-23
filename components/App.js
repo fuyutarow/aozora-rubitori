@@ -8,4 +8,5 @@ const App = () => (
     <TextPrinter />
   </div>
 )
+
 export default App

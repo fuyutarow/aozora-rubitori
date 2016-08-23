@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux'
 
-const todo = (state, action) => {
+const initialState = {
+  url: ''
+} 
+
+const item = (state = initialState, action) => {
   switch (action.type) {
     case 'POST':
       return {
-        id: action.id,
         url: action.text,
       }
     default:
@@ -12,20 +15,8 @@ const todo = (state, action) => {
   }
 }
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case 'POST':
-      return [
-        ...state,
-        todo(undefined, action)
-      ]
-      
-    default:
-      return state
-  }
-}
-
-const itemApp = combineReducers({
-  todos
+const rootReducer = combineReducers({
+  item,
 })
-export default itemApp
+
+export default rootReducer
